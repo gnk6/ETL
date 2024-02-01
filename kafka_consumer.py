@@ -7,7 +7,7 @@ import time
 
 
 class Kafka__Consumer:
-	def __init__(self,users_topic='users-topic',bands_topic='bands-topic',bootstrap_servers='localhost:9092',mysql_host='127.0.0.1',mysql_user='backend',mysql_pass='backend',mysql_port='33306',mysql_db='user'):
+	def __init__(self,users_topic='users-topic',bands_topic='bands-topic',bootstrap_servers='localhost:9092',mysql_host='127.0.0.1',mysql_user='mysql1234',mysql_pass='mysql1234',mysql_port='33306',mysql_db='user'):
 		self.users_topic=users_topic
 		self.bands_topic=bands_topic
 		self.bootstrap_servers=bootstrap_servers
