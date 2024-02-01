@@ -14,12 +14,12 @@ b. A producer script runs as a REST API is receiving requests GET requests and u
 c. Two kafka topics, one for users (from neo4j) and an another one for bands (from mongoDB).
 
 d. A consumer script that reads data from Kafka topics, it aggregates them and uploads only the needed data to MySQL. 
-################################################################################################################################
+####################################################################################################
 
 - Neo4j example commands to build nodes and relationships
 create (n:Person{uid:'G1', name:'Giannis',favoriteband:['Muse','Led Zeppelin','Pink Floyd']}) ##To create a person's nodes
 match(a:Person),(b:Person) where a.uid='G1' and b.uid='D1' create (b)-[fr:Friend]->(a) ##To create relationships between person
-################################################################################################################################
+####################################################################################################
 
 - MongoDB example commands to create bands
 use bandDB ##To create the table
@@ -29,10 +29,10 @@ db.bands.insertOne({
     "albums": ["Artic Monkeys", "The Car", "Favourite Worst Nightmare","Tranquility Base Hotel & Casino"]
 
 })
-################################################################################################################################
+####################################################################################################
 - Kafka commands to build topics
 kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic users-topic
 kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic bands-topic
-################################################################################################################################
+####################################################################################################
 - MySQL command to create table
 CREATE TABLE music (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, user_id VARCHAR(6) NOT NULL, user_name VARCHAR(30) NOT NULL, albums VARCHAR(10000), is_complete BOOLEAN NOT NULL);
