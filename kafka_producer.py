@@ -1,4 +1,4 @@
-#!/root/backend/scripts/favenv/bin/python3
+#!/usr/bin/env python3
 from neo4j import GraphDatabase
 from flask import Flask, request
 from pymongo import MongoClient
