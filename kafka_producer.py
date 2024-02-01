@@ -12,7 +12,7 @@ uri = "neo4j://localhost:7687"
 mongoURI = 'mongodb://localhost:27017'
 
 def neoConn(uid,uri):
-    with GraphDatabase.driver(uri, auth=('neo4j','12345678')) as driver:
+    with GraphDatabase.driver(uri, auth=('neo4j','neo4j12345')) as driver:
         with driver.session() as session:
             result = session.run("MATCH (p:Person {uid: $pid})-[:Friend]-(friend) RETURN p.name AS person, p.uid as user_id, p.favoriteband AS bands, collect(friend.uid) AS friends", pid=uid)
             result_list = result.data()
