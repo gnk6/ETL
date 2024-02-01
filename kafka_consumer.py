@@ -1,4 +1,4 @@
-#!/root/backend/scripts/favenv/bin/python3
+#!/usr/bin/env python3
 
 from kafka import KafkaConsumer
 import mysql.connector
