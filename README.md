@@ -7,7 +7,7 @@ a. Three databases in total:
   3. MySQL, contains the aggregated data with the below collumns.
   | ID | Userid | Username| Albums that he listens to | Complete boolean |
 
-b. A producer script runs as a REST API is receiving requests GET requests and uploads data to Kafka. Example of the requests is the below.
+b. A producer script runs as a REST API is receiving GET requests and uploads data to Kafka. Example of the requests is the below.
   1. curl -X GET http://<server-ip>:5000/users -H "Content-Type: application/json" -d '{"user":"G3"}' ##Request to publish user based on his ID
   2. curl -X GET http://<server-ip>:5000/bands -H "Content-Type: application/json" -d '{"start_date":"2000","end_date":"2010"}' ##Request to publish bands based on their creation year
 
